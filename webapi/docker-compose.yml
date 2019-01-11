@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  set-material-ui-webhost:
+    image: set-material-ui-webhost:dev
+    build:
+      context: ./webhost
+      dockerfile: Dockerfile

@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  set-material-ui-webhost:
+    image: set-material-ui-webhost:dev
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    entrypoint: tail -f /dev/null
+    labels:
+     - "com.microsoft.visualstudio.targetoperatingsystem=linux"

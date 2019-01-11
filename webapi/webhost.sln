@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "set-material-ui-webhost", "webhost\set-material-ui-webhost.csproj", "{69BBAA9A-DA83-40BE-8480-D6B8B00CF7AF}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{74741E42-96A2-4D50-8B9A-550A19DFE31A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{69BBAA9A-DA83-40BE-8480-D6B8B00CF7AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69BBAA9A-DA83-40BE-8480-D6B8B00CF7AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69BBAA9A-DA83-40BE-8480-D6B8B00CF7AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69BBAA9A-DA83-40BE-8480-D6B8B00CF7AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74741E42-96A2-4D50-8B9A-550A19DFE31A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74741E42-96A2-4D50-8B9A-550A19DFE31A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74741E42-96A2-4D50-8B9A-550A19DFE31A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74741E42-96A2-4D50-8B9A-550A19DFE31A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {08028439-AA14-4D23-8B85-726F675D24CB}
+	EndGlobalSection
+EndGlobal
