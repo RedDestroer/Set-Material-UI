@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "set-material-ui-webhost", "webhost\set-material-ui-webhost.csproj", "{69BBAA9A-DA83-40BE-8480-D6B8B00CF7AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Set-material-ui-webhost", "webhost\Set-material-ui-webhost.csproj", "{69BBAA9A-DA83-40BE-8480-D6B8B00CF7AF}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{74741E42-96A2-4D50-8B9A-550A19DFE31A}"
 EndProject

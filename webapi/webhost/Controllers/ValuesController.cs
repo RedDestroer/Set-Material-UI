@@ -1,45 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.IO;
+using System.Xml;
 using Microsoft.AspNetCore.Mvc;
+using SetMeta.Abstract;
+using SetMeta.Entities;
+using SetMeta.Util;
+using WebHost.Other;
+using WebHost.Requests;
 
 namespace WebHost.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ValuesController : ControllerBase
+    public class OptionSetController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
+        // POST api/optionSet/parseOptionSet
         [HttpPost]
-        public void Post([FromBody] string value)
+        public ActionResult<OptionSet> ParseOptionsSet(ParseOptionsSetRequest request)
         {
-        }
+            Validate.NotNull(request, nameof(request));
+            Validate.NotNull(request.Data, nameof(request.Data));
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
+            OptionSetParser parser = null;
+            if (!string.IsNullOrWhiteSpace(request.Version))
+                parser = OptionSetParser.Create(request.Version);
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            if (parser == null)
+            {
+                using (var stringReader = new StringReader(request.Data))
+                using (var xmlTextReader = new XmlTextReader(stringReader))
+                {
+                    parser = OptionSetParser.Create(xmlTextReader);
+                }
+            }
+
+            var validator = new DefaultOptionSetValidator();
+            var result = parser.Parse(request.Data, validator);
+
+            return Ok(result);
         }
     }
 }
